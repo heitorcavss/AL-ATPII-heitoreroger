@@ -43,7 +43,7 @@ int main() {
 void intro() {
     printf("╔══════════════════════════════════════════╗\n");
     printf("║      ALGEBRA LINEAR  -  ATP 2            ║\n");
-    printf("║  Transformacoes Lineares e Matrizes       ║\n");
+    printf("║  Transformacoes Lineares e Matrizes      ║\n");
     printf("╚══════════════════════════════════════════╝\n");
     printf("\n");
 }
