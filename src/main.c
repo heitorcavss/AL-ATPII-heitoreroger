@@ -1,14 +1,15 @@
 #include <stdio.h>
 
 
-void intro(void);
-void menu(void);
+void intro();
+void menu();
 
-void resolverSistemaLinear(void);
-void verificarInjetividade(void);
-void determinarBase(void);
-void calcularAutovaloresAutovetores(void);
-void diagonalizarMatriz(void);
+void resolverSistemaLinear();
+void verificarInjetividade();
+void determinarBase();
+void calcularAutovaloresAutovetores();
+void diagonalizarMatriz();
+
 
 int main() {
     int opcao;

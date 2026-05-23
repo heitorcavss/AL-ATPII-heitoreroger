@@ -23,16 +23,16 @@ void lerMatriz(Matriz *m){
     for(int i = 0; i < m->linhas; i++){
         for(int j = 0; j < m->colunas; j++){
             printf("Digite o valor do termo I[%d] J[%d]: ",i,j);
-            scanf("%d", &m->valores[i][j]);
+            scanf("%lf", &m->valores[i][j]);
             printf("\n");
         }
     }
 }//função para ler os valores de uma matriz;
 
-void mostraMatriz(Matriz *m){
-    for(int i = 0; i < m->linhas; i++){
-        for(int j = 0; j < m->colunas; j++){
-            printf("%d\t",m->valores[i][j]);
+void mostraMatriz(Matriz m){
+    for(int i = 0; i < m.linhas; i++){
+        for(int j = 0; j < m.colunas; j++){
+            printf("%d\t",m.valores[i][j]);
         }
         printf("\n");
     }
@@ -40,14 +40,22 @@ void mostraMatriz(Matriz *m){
 
 int multiplicacaoMatriz(Matriz *m, Matriz *n, Matriz *r){
     
-    if(m->colunas == n->linhas){
-    r->linhas = m->linhas;
-    r->colunas = n->colunas;
-    //define o tamanho da matriz resultante
+    if(m == NULL || n == NULL || r == NULL){
+        printf("Erro: ponteiro nulo fornecido para multiplicacaoMatriz.\n");
+        return 0;
+    }
+
     
+    if(m->colunas == n->linhas){
+        r->linhas = m->linhas;
+        r->colunas = n->colunas;
+        //define o tamanho da matriz resultante
+        
+        inicializarMatriz(r); //garante que a matriz resultante esteja zerada antes de realizar a multiplicação
+        
         for(int i = 0; i < m->linhas; i++){
             for(int j = 0 ;j < n->colunas; j++){
-                int soma=0;
+                double soma=0;
                 for(int k = 0; k < m->colunas; k++){
                     soma+= m->valores[i][k] * n->valores[k][j];
                 }
@@ -59,4 +67,10 @@ int multiplicacaoMatriz(Matriz *m, Matriz *n, Matriz *r){
         printf("Erro: não é possível multiplicar essas matrizes.\n");
         return 0;
     }
-}   
+
+}
+
+
+
+
+
