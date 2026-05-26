@@ -4,7 +4,7 @@
 #include "../include/det.h"
 
 
-double calcDet(Matriz* m){
+double calcDet(Matriz* m){ //laplace
     if(m->linhas != m->colunas){
         return 0; //determinante de matriz não quadrada é zero
     }
@@ -20,7 +20,6 @@ double calcDet(Matriz* m){
     double det = 0;
 
     for(int j = 0; j < m->colunas; j++){
-        printf("j=%d, elemento=%.1f, sinal=%.1f\n", j, m->valores[0][j], (j % 2 == 0) ? 1.0 : -1.0);
         Matriz sub;
         inicializarMatriz(&sub);
         //criar submatriz removendo a primeira linha e a coluna j

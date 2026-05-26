@@ -32,7 +32,7 @@ void lerMatriz(Matriz *m){
 void mostraMatriz(Matriz m){
     for(int i = 0; i < m.linhas; i++){
         for(int j = 0; j < m.colunas; j++){
-            printf("%d\t",m.valores[i][j]);
+            printf("%.2f\t",m.valores[i][j]);
         }
         printf("\n");
     }
